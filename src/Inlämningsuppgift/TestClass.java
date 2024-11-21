@@ -16,7 +16,10 @@ public class TestClass {
     }
     @Test
     public void TestaddUpdatesTheLongestWord () {
-
+        TextCounterLogik counter = new TextCounterLogik();
+        counter.addRow("Solen");
+        counter.addRow("Skiner!");
+        assertEquals( 11, counter.getCharacterCount());
     }
     @Test
     public void TestaddUpdatesRowCount () {
