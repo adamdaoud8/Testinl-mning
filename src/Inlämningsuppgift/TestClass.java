@@ -17,19 +17,25 @@ public class TestClass {
     @Test
     public void TestaddUpdatesTheLongestWord () {
         TextCounterLogik counter = new TextCounterLogik();
+        counter.addRow("En rödfärgad Ferrari");
+        assertEquals("rödfärgad", counter.getTheLongestWord());
 
 
     }
     @Test
     public void TestaddUpdatesRowCount () {
         TextCounterLogik counter = new TextCounterLogik();
-
+        counter.addRow("Jag har köpt en ny cykel!");
+        counter.addRow("vad trevligt!, vilken färg är den");
+        counter.addRow("Den är Blå");
+        assertEquals(3, counter.getRowCount());
 
     }
     @Test
     public void TestaddUpdatesWordCount () {
         TextCounterLogik counter = new TextCounterLogik();
-
+        counter.addRow("Hej Världen!");
+        assertEquals("Världen!", counter.getWordcount());
 
     }
 }
