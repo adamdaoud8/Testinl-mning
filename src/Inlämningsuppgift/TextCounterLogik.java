@@ -1,5 +1,7 @@
 package Inlämningsuppgift;
 
+import org.junit.jupiter.api.Test;
+
 public class TextCounterLogik {
     private int rowcount = 0;
     private int characterCount = 0;
@@ -10,11 +12,12 @@ public class TextCounterLogik {
 
         rowcount++;
         characterCount+= row.length();
-        String[] words = row.split( "" );
+        String[] words = row.split( " " );
 
         WordCount += words.length;
 
         for (int i = 0; i < words.length; i++) {
+
             if (words[i].length() > TheLongestWord.length()) {
                 TheLongestWord = words[i];
             }

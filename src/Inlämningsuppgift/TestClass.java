@@ -1,6 +1,9 @@
 package Inlämningsuppgift;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.Assert.assertNotSame;
 
@@ -11,7 +14,7 @@ public class TestClass {
         TextCounterLogik counter = new TextCounterLogik();
         counter.addRow("Solen");
         counter.addRow("Skiner!");
-        assertEquals( 11, counter.getCharacterCount());
+        assertEquals( 12, counter.getCharacterCount());
 
     }
     @Test
@@ -35,7 +38,13 @@ public class TestClass {
     public void TestaddUpdatesWordCount () {
         TextCounterLogik counter = new TextCounterLogik();
         counter.addRow("Hej Världen!");
-        assertEquals("Världen!", counter.getWordcount());
+        assertEquals(12, counter.getWordcount());
+    }
 
+    @Test
+    public void TestStop() {
+        TextCounterLogik counter = new TextCounterLogik();
+        boolean result = counter.isStop("stop");
+        Assertions.assertTrue(result,"isStop återsänder sant till 'stop'");
     }
 }
